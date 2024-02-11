@@ -1,11 +1,14 @@
-const A = document.getElementById("a");
+// const A = document.getElementById("a");
 
-const audioA = new Audio("./sounds/clap.wav");
+// const audioA = new Audio("./sounds/clap.wav");
 
-A.addEventListener("click", function clickA() {
-  audioA.play();
+window.addEventListener("click", function (e) {
+  console.log(e);
+  // audioA.play();
 });
 
 window.addEventListener("keydown", function (e) {
-  audioA.play();
+  console.log(e);
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  audio.play();
 });
