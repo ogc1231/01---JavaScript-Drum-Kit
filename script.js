@@ -14,3 +14,8 @@ window.addEventListener("keydown", function (e) {
   audio.play();
   key.classList.add("playing");
 });
+
+window.addEventListener("keyup", function (e) {
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  key.classList.remove("playing");
+});
