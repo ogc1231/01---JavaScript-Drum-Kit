@@ -10,7 +10,6 @@ drums.forEach((drum) => {
   });
 });
 
-// for keyboard button press
 function playSoundClick(drum) {
   const clickAudio = document.getElementById(drum.dataset.key);
   clickAudio.currentTime = 0;
@@ -18,6 +17,9 @@ function playSoundClick(drum) {
   drum.classList.add("playing");
 }
 
+// for keyboard button press
+
+// keydown
 window.addEventListener("keydown", function (e) {
   const audioKeyDown = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -27,6 +29,7 @@ window.addEventListener("keydown", function (e) {
   key.classList.add("playing");
 });
 
+// keyup
 window.addEventListener("keyup", function (e) {
   const audioKeyDown = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
