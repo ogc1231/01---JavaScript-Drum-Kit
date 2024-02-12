@@ -1,23 +1,29 @@
-// const A = document.getElementById("a");
+const drums = document.querySelectorAll(".key");
 
-// const audioA = new Audio("./sounds/clap.wav");
-
-window.addEventListener("click", function (e) {
-  audio.play();
+drums.forEach((drum) => {
+  drum.addEventListener("click", function () {
+    playSoundClick(drum);
+  });
 });
 
+function playSoundClick(drum) {
+  const clickAudio = document.getElementById(drum.dataset.key);
+  clickAudio.currentTime = 0;
+  clickAudio.play();
+}
+
 window.addEventListener("keydown", function (e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const audioKeyDown = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  if (audio === null) return;
-  audio.currentTime = 0;
-  audio.play();
+  if (audioKeyDown === null) return;
+  audioKeyDown.currentTime = 0;
+  audioKeyDown.play();
   key.classList.add("playing");
 });
 
 window.addEventListener("keyup", function (e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const audioKeyDown = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  if (audio === null) return;
+  if (audioKeyDown === null) return;
   key.classList.remove("playing");
 });
