@@ -1,7 +1,7 @@
 const drums = document.querySelectorAll(".key");
 
 drums.forEach((drum) => {
-  drum.addEventListener("click", function () {
+  drum.addEventListener("mousedown", function () {
     playSoundClick(drum);
   });
 });
