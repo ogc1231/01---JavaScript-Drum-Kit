@@ -10,6 +10,7 @@ function playSoundClick(drum) {
   const clickAudio = document.getElementById(drum.dataset.key);
   clickAudio.currentTime = 0;
   clickAudio.play();
+  drum.classList.add("playing");
 }
 
 window.addEventListener("keydown", function (e) {
