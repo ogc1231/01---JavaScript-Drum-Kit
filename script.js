@@ -1,3 +1,4 @@
+// for mouse click
 const drums = document.querySelectorAll(".key");
 
 drums.forEach((drum) => {
@@ -9,6 +10,7 @@ drums.forEach((drum) => {
   });
 });
 
+// for keyboard button press
 function playSoundClick(drum) {
   const clickAudio = document.getElementById(drum.dataset.key);
   clickAudio.currentTime = 0;
