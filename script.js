@@ -4,6 +4,9 @@ drums.forEach((drum) => {
   drum.addEventListener("mousedown", function () {
     playSoundClick(drum);
   });
+  drum.addEventListener("mouseup", function () {
+    drum.classList.remove("playing");
+  });
 });
 
 function playSoundClick(drum) {
